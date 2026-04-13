@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c8r2n8mjlcss3"]
+
+[ext_resource type="Script" uid="uid://cyhrsdiwgjs2y" path="res://scene_1.gd" id="1_x3g6e"]
+[ext_resource type="Texture2D" uid="uid://d2jlt45cueqvh" path="res://Doggo.png" id="2_30lbi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_acvur"]
+radius = 28.0
+height = 56.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x3g6e"]
+radius = 47.042534
+
+[node name="Player" type="CharacterBody2D" unique_id=775707240]
+script = ExtResource("1_x3g6e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1583023909]
+position = Vector2(28, 24)
+shape = SubResource("CapsuleShape2D_acvur")
+
+[node name="Doggo2D" type="Sprite2D" parent="." unique_id=1774665441]
+texture_filter = 1
+position = Vector2(26.999998, 27)
+scale = Vector2(2.6875002, 2.65625)
+texture = ExtResource("2_30lbi")
+
+[node name="InteractionDetector" type="Area2D" parent="." unique_id=1341304388]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="InteractableShape" type="CollisionShape2D" parent="InteractionDetector" unique_id=1548997647]
+position = Vector2(28, 24)
+shape = SubResource("CircleShape2D_x3g6e")
+
+[connection signal="area_entered" from="InteractionDetector" to="." method="_on_interaction_detector_area_entered"]
+[connection signal="area_exited" from="InteractionDetector" to="." method="_on_interaction_detector_area_exited"]

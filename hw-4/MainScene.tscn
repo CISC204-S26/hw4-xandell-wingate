@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cfb1ug0fqg0ep"]
+
+[ext_resource type="PackedScene" uid="uid://c8r2n8mjlcss3" path="res://Scene1.tscn" id="1_3mqji"]
+
+[node name="Wingatenode2d" type="Node2D" unique_id=165425222]
+
+[node name="Player" parent="." unique_id=775707240 instance=ExtResource("1_3mqji")]
