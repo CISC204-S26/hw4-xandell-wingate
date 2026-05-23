@@ -8,12 +8,17 @@ func _physics_process(delta):
 	var direction = Vector2.ZERO
 	
 	if Input.is_action_just_pressed("interact"):
+		print("E pressed")
 		if nearby_interactables.size() > 0:
+			print("found interactable")
 			var target = nearby_interactables.back()
+			print(target)
 			target.interact()
+		else:
+			print("no interactable")
 
-	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 
 	direction = direction.normalized()
 	velocity = direction * speed

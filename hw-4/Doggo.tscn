@@ -22,9 +22,7 @@ texture = ExtResource("2_30lbi")
 shape = SubResource("CapsuleShape2D_acvur")
 
 [node name="InteractionDetector" type="Area2D" parent="." unique_id=1341304388]
-collision_layer = 0
-collision_mask = 2
-monitorable = false
+collision_layer = 2
 
 [node name="InteractableShape" type="CollisionShape2D" parent="InteractionDetector" unique_id=1548997647]
 shape = SubResource("CircleShape2D_x3g6e")
